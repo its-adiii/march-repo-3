@@ -15,7 +15,7 @@ st.set_page_config(
     page_icon="R"
 )
 
-# Custom CSS for Premium SaaS Look
+# Custom CSS for Premium SaaS Look with Mobile Responsiveness
 def set_branding():
     st.markdown("""
         <style>
@@ -25,6 +25,116 @@ def set_branding():
         
         * {
             font-family: 'Cormorant Garamond', serif !important;
+            box-sizing: border-box !important;
+        }
+        
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            .stColumns {
+                flex-direction: column !important;
+            }
+            
+            .stColumn {
+                width: 100% !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .kpi-card {
+                min-height: 120px !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .kpi-value {
+                font-size: 1.5rem !important;
+            }
+            
+            .kpi-label {
+                font-size: 0.9rem !important;
+            }
+            
+            .kpi-change {
+                font-size: 0.8rem !important;
+            }
+            
+            .glass-card {
+                padding: 1rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .viz-3d-container {
+                min-height: 300px !important;
+                max-height: 400px !important;
+            }
+            
+            .hero-section {
+                padding: 2rem 1rem !important;
+            }
+            
+            .hero-title {
+                font-size: 2rem !important;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem !important;
+            }
+            
+            .cta-button {
+                padding: 0.5rem 1rem !important;
+                font-size: 0.9rem !important;
+            }
+            
+            h1 {
+                font-size: 2rem !important;
+            }
+            
+            h2 {
+                font-size: 1.5rem !important;
+            }
+            
+            h3 {
+                font-size: 1.2rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stApp {
+                padding: 0.5rem !important;
+            }
+            
+            .kpi-card {
+                min-height: 100px !important;
+                padding: 0.5rem !important;
+            }
+            
+            .kpi-value {
+                font-size: 1.2rem !important;
+            }
+            
+            .kpi-label {
+                font-size: 0.8rem !important;
+            }
+            
+            .hero-title {
+                font-size: 1.5rem !important;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.9rem !important;
+            }
+            
+            h1 {
+                font-size: 1.5rem !important;
+            }
+            
+            h2 {
+                font-size: 1.2rem !important;
+            }
+            
+            .stButton > button {
+                width: 100% !important;
+                margin-bottom: 0.5rem !important;
+            }
+        }
             margin: 0 !important;
             padding: 0 !important;
             box-sizing: border-box !important;
@@ -818,47 +928,70 @@ def render_navigation():
     if 'current_page' not in st.session_state:
         st.session_state.current_page = 'Home'
     
-    # Simple logo display
-    st.markdown("""
-        <div style="text-align: center; margin: 0;">
-            <div class="ridelytics-logo">
-                Ridelytics
-            </div>
-        </div>
-    """, unsafe_allow_html=True)
+    # Check if mobile device
+    is_mobile = st.session_state.get('is_mobile', False)
     
-    # Navigation buttons
-    col1, col2, col3, col4, col5 = st.columns(5)
-    
-    with col1:
-        if st.button("Home", key="nav_home", use_container_width=True):
-            st.session_state.current_page = 'Home'
-            st.rerun()
-    
-    with col2:
-        if st.button("Analytics", key="nav_analytics", use_container_width=True):
-            st.session_state.current_page = 'Analytics'
-            st.rerun()
-    
-    with col3:
-        if st.button("Routes", key="nav_routes", use_container_width=True):
-            st.session_state.current_page = 'Routes'
-            st.rerun()
-    
-    with col4:
-        if st.button("Revenue", key="nav_revenue", use_container_width=True):
-            st.session_state.current_page = 'Revenue'
-            st.rerun()
-    
-    with col5:
-        if st.button("Insights", key="nav_insights", use_container_width=True):
-            st.session_state.current_page = 'Insights'
-            st.rerun()
+    # Mobile Navigation - Vertical Layout
+    if is_mobile:
+        col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
+        
+        with col1:
+            if st.button("🏠 Home", key="nav_home", use_container_width=True):
+                st.session_state.current_page = 'Home'
+                st.rerun()
+        
+        with col2:
+            if st.button("📊 Analytics", key="nav_analytics", use_container_width=True):
+                st.session_state.current_page = 'Analytics'
+                st.rerun()
+        
+        with col3:
+            if st.button("🗺️ Routes", key="nav_routes", use_container_width=True):
+                st.session_state.current_page = 'Routes'
+                st.rerun()
+        
+        with col4:
+            if st.button("💰 Revenue", key="nav_revenue", use_container_width=True):
+                st.session_state.current_page = 'Revenue'
+                st.rerun()
+        
+        with col5:
+            if st.button("💡 Insights", key="nav_insights", use_container_width=True):
+                st.session_state.current_page = 'Insights'
+                st.rerun()
+    else:
+        # Desktop Navigation - Horizontal Layout
+        col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
+        
+        with col1:
+            if st.button("🏠 Home", key="nav_home_desktop", use_container_width=True):
+                st.session_state.current_page = 'Home'
+                st.rerun()
+        
+        with col2:
+            if st.button("📊 Analytics", key="nav_analytics_desktop", use_container_width=True):
+                st.session_state.current_page = 'Analytics'
+                st.rerun()
+        
+        with col3:
+            if st.button("🗺️ Routes", key="nav_routes_desktop", use_container_width=True):
+                st.session_state.current_page = 'Routes'
+                st.rerun()
+        
+        with col4:
+            if st.button("💰 Revenue", key="nav_revenue_desktop", use_container_width=True):
+                st.session_state.current_page = 'Revenue'
+                st.rerun()
+        
+        with col5:
+            if st.button("💡 Insights", key="nav_insights_desktop", use_container_width=True):
+                st.session_state.current_page = 'Insights'
+                st.rerun()
 
 # Custom KPI Card Component
 def kpi_card(title, value, change=None, change_type="positive"):
     change_class = "positive" if change_type == "positive" else "negative"
-    change_symbol = "↑" if change_type == "positive" else "↓"
+    change_symbol = "" if change_type == "positive" else ""
     change_color = "#00C853" if change_type == "positive" else "#FF5252"
     
     if change:
@@ -1040,6 +1173,12 @@ def load_sample_data():
 # Main App
 def main():
     set_branding()
+    
+    # Detect mobile device
+    user_agent = st.experimental_get_query_params().get('user_agent', '')
+    is_mobile = 'Mobile' in user_agent or st.session_state.get('is_mobile', False)
+    st.session_state.is_mobile = is_mobile
+    
     render_navigation()
     
     # Get current page from session state
@@ -1375,6 +1514,9 @@ def main():
         # Peak Demand Radial Bar Chart
         st.markdown('<h2 style="text-align: center; margin: 0;">Peak Demand Analysis</h2>', unsafe_allow_html=True)
         
+        # Responsive chart height
+        chart_height = 300 if is_mobile else 400
+        
         # Create simple Bar Chart for Peak Demand
         fig_peak = go.Figure(data=[
             go.Bar(
@@ -1397,7 +1539,7 @@ def main():
             title_font_size=16,
             xaxis_title="Time of Day",
             yaxis_title="Demand Level",
-            height=400,
+            height=chart_height,
             margin_l=0,
             margin_r=0,
             margin_t=40,
