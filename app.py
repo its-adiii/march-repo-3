@@ -1392,7 +1392,7 @@ def main():
             paper_bgcolor='#00122e',
             plot_bgcolor='#00122e',
             font=dict(color='white', size=12),
-            title_font=dict(color='#FFD700', size=16),
+            title=dict(text='Peak Demand Analysis', font=dict(color='#FFD700', size=16)),
             xaxis=dict(
                 title="Time of Day",
                 titlefont=dict(color='white'),
@@ -1433,7 +1433,7 @@ def main():
             paper_bgcolor='#00122e',
             plot_bgcolor='#00122e',
             font=dict(color='white', size=12),
-            title_font=dict(color='#FFD700', size=16),
+            title=dict(text='Airport Route Performance', font=dict(color='#FFD700', size=16)),
             xaxis=dict(
                 title="Routes",
                 titlefont=dict(color='white'),
@@ -1486,7 +1486,7 @@ def main():
             paper_bgcolor='#00122e',
             plot_bgcolor='#00122e',
             font=dict(color='white', size=12),
-            title_font=dict(color='#FFD700', size=16),
+            title=dict(text='Revenue Heatmap', font=dict(color='#FFD700', size=16)),
             xaxis=dict(
                 title="Hour of Day",
                 titlefont=dict(color='white'),
@@ -1535,7 +1535,7 @@ def main():
             paper_bgcolor='#00122e',
             plot_bgcolor='#00122e',
             font=dict(color='white', size=12),
-            title_font=dict(color='#FFD700', size=16),
+            title=dict(text='Weekend vs Weekday Analysis', font=dict(color='#FFD700', size=16)),
             xaxis=dict(
                 title="Day of Week",
                 titlefont=dict(color='white'),
