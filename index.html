@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ridelytics - Premium Ride Analytics</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0A0E1A 0%, #1A1F35 50%, #0F1419 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+        
+        .title {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .status {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .status h3 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 215, 0, 0.3);
+            border-top: 3px solid #FFD700;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .contact {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">RIDELYTICS</div>
+        <div class="title">Premium Ride Analytics Platform</div>
+        <div class="description">
+            Transform your ride data into actionable insights with our premium analytics platform. 
+            Real-time visualizations, 3D analysis, and intelligent forecasting at your fingertips.
+        </div>
+        
+        <div class="status">
+            <h3><span class="loading"></span>Application Status</h3>
+            <p>This Streamlit application is currently being prepared for deployment.</p>
+            <p>For the full interactive experience, please run locally or contact us for deployment access.</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <h4>📊 Advanced Analytics</h4>
+                <p>Real-time data visualization and insights</p>
+            </div>
+            <div class="feature">
+                <h4>🚗 Route Intelligence</h4>
+                <p>Optimize routes and improve efficiency</p>
+            </div>
+            <div class="feature">
+                <h4>💰 Revenue Analytics</h4>
+                <p>Track and maximize revenue streams</p>
+            </div>
+            <div class="feature">
+                <h4>🎯 Business Insights</h4>
+                <p>Data-driven decision making</p>
+            </div>
+        </div>
+        
+        <div class="contact">
+            <h4>🚀 Ready to Deploy?</h4>
+            <p>Contact us for full deployment access or run locally with Streamlit:</p>
+            <p><code>streamlit run app.py</code></p>
+        </div>
+    </div>
+</body>
+</html>
