@@ -1174,10 +1174,8 @@ def load_sample_data():
 def main():
     set_branding()
     
-    # Detect mobile device
-    user_agent = st.experimental_get_query_params().get('user_agent', '')
-    is_mobile = 'Mobile' in user_agent or st.session_state.get('is_mobile', False)
-    st.session_state.is_mobile = is_mobile
+    # Simple mobile detection (can be enhanced later)
+    is_mobile = st.session_state.get('is_mobile', False)
     
     render_navigation()
     
@@ -1514,9 +1512,6 @@ def main():
         # Peak Demand Radial Bar Chart
         st.markdown('<h2 style="text-align: center; margin: 0;">Peak Demand Analysis</h2>', unsafe_allow_html=True)
         
-        # Responsive chart height
-        chart_height = 300 if is_mobile else 400
-        
         # Create simple Bar Chart for Peak Demand
         fig_peak = go.Figure(data=[
             go.Bar(
@@ -1539,7 +1534,7 @@ def main():
             title_font_size=16,
             xaxis_title="Time of Day",
             yaxis_title="Demand Level",
-            height=chart_height,
+            height=400,
             margin_l=0,
             margin_r=0,
             margin_t=40,
