@@ -1391,20 +1391,17 @@ def main():
             template='plotly_dark',
             paper_bgcolor='#00122e',
             plot_bgcolor='#00122e',
-            font=dict(color='white', size=12),
-            title_font=dict(color='#FFD700', size=16),
-            xaxis=dict(
-                title="Time of Day",
-                titlefont=dict(color='white'),
-                tickfont=dict(color='white')
-            ),
-            yaxis=dict(
-                title="Demand Level",
-                titlefont=dict(color='white'),
-                tickfont=dict(color='white')
-            ),
+            font_color='white',
+            font_size=12,
+            title_font_color='#FFD700',
+            title_font_size=16,
+            xaxis_title="Time of Day",
+            yaxis_title="Demand Level",
             height=400,
-            margin=dict(l=0, r=0, t=40, b=0)
+            margin_l=0,
+            margin_r=0,
+            margin_t=40,
+            margin_b=0
         )
         
         st.plotly_chart(fig_peak, use_container_width=True)
@@ -1432,21 +1429,17 @@ def main():
             template='plotly_dark',
             paper_bgcolor='#00122e',
             plot_bgcolor='#00122e',
-            font=dict(color='white', size=12),
-            title_font=dict(color='#FFD700', size=16),
-            xaxis=dict(
-                title="Routes",
-                titlefont=dict(color='white'),
-                tickfont=dict(color='white'),
-                tickangle=45
-            ),
-            yaxis=dict(
-                title="Average Revenue per Ride ($)",
-                titlefont=dict(color='white'),
-                tickfont=dict(color='white')
-            ),
+            font_color='white',
+            font_size=12,
+            title_font_color='#FFD700',
+            title_font_size=16,
+            xaxis_title="Routes",
+            yaxis_title="Average Revenue per Ride ($)",
             height=400,
-            margin=dict(l=0, r=0, t=40, b=100)
+            margin_l=0,
+            margin_r=0,
+            margin_t=40,
+            margin_b=100
         )
         
         st.plotly_chart(fig_airport, use_container_width=True)
@@ -1485,20 +1478,17 @@ def main():
             template='plotly_dark',
             paper_bgcolor='#00122e',
             plot_bgcolor='#00122e',
-            font=dict(color='white', size=12),
-            title_font=dict(color='#FFD700', size=16),
-            xaxis=dict(
-                title="Hour of Day",
-                titlefont=dict(color='white'),
-                tickfont=dict(color='white')
-            ),
-            yaxis=dict(
-                title="Day of Week",
-                titlefont=dict(color='white'),
-                tickfont=dict(color='white')
-            ),
+            font_color='white',
+            font_size=12,
+            title_font_color='#FFD700',
+            title_font_size=16,
+            xaxis_title="Hour of Day",
+            yaxis_title="Day of Week",
             height=400,
-            margin=dict(l=0, r=0, t=40, b=0)
+            margin_l=0,
+            margin_r=0,
+            margin_t=40,
+            margin_b=0
         )
         
         st.plotly_chart(fig_heatmap, use_container_width=True)
@@ -1534,20 +1524,17 @@ def main():
             template='plotly_dark',
             paper_bgcolor='#00122e',
             plot_bgcolor='#00122e',
-            font=dict(color='white', size=12),
-            title_font=dict(color='#FFD700', size=16),
-            xaxis=dict(
-                title="Day of Week",
-                titlefont=dict(color='white'),
-                tickfont=dict(color='white')
-            ),
-            yaxis=dict(
-                title="Average Demand",
-                titlefont=dict(color='white'),
-                tickfont=dict(color='white')
-            ),
+            font_color='white',
+            font_size=12,
+            title_font_color='#FFD700',
+            title_font_size=16,
+            xaxis_title="Day of Week",
+            yaxis_title="Average Demand",
             height=300,
-            margin=dict(l=0, r=0, t=40, b=0),
+            margin_l=0,
+            margin_r=0,
+            margin_t=40,
+            margin_b=0,
             barmode='group'
         )
         
