@@ -68,31 +68,51 @@ def set_branding():
             
             .hero-section {
                 padding: 2rem 1rem !important;
+                text-align: center !important;
+            }
+            
+            .hero-content {
+                max-width: 100% !important;
+                padding: 0 1rem !important;
             }
             
             .hero-title {
                 font-size: 2rem !important;
+                text-align: center !important;
             }
             
             .hero-subtitle {
                 font-size: 1rem !important;
+                text-align: center !important;
+                line-height: 1.4 !important;
+            }
+            
+            .hero-cta {
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 1rem !important;
             }
             
             .cta-button {
                 padding: 0.5rem 1rem !important;
                 font-size: 0.9rem !important;
+                width: 100% !important;
+                max-width: 200px !important;
             }
             
             h1 {
                 font-size: 2rem !important;
+                text-align: center !important;
             }
             
             h2 {
                 font-size: 1.5rem !important;
+                text-align: center !important;
             }
             
             h3 {
                 font-size: 1.2rem !important;
+                text-align: center !important;
             }
         }
         
@@ -1203,7 +1223,7 @@ def main():
         # 3D Visualizations Showcase
         st.markdown('<h2 style="text-align: center; margin: 0;">Advanced 3D Analytics</h2>', unsafe_allow_html=True)
         
-        # Display 3D visualizations
+        # Responsive layout for 3D visualizations
         col1, col2 = st.columns(2)
         
         with col1:
@@ -1221,6 +1241,7 @@ def main():
         # Enhanced KPI Cards
         st.markdown('<h2 style="text-align: center; margin: 0;">Performance Metrics</h2>', unsafe_allow_html=True)
         
+        # Responsive KPI layout
         col1, col2, col3, col4 = st.columns(4)
         
         with col1:
